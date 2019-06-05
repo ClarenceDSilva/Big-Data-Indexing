@@ -2,5 +2,4 @@
 Repository for the course Advanced Big-Data Application and Indexing Techniques
 
 ## Architecture
-![Application Architecture](/images/architecture.png)
-Format: ![Alt Text](url)
+![Application Architecture](images/architecture.png)
