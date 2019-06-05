@@ -2,4 +2,4 @@
 Repository for the course Advanced Big-Data Application and Indexing Techniques
 
 ## Architecture
-![Application Architecture](images/architecture.png)
+![alt text](https://github.com/ClarenceDSilva/Big-Data-Indexing/blob/master/images/architecture.png)
