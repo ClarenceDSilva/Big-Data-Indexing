@@ -16,8 +16,12 @@ public interface RedisDao<T> {
 	public void putValueWithExpireTime(String key, T value, long timeout, TimeUnit unit);
 
 	public T getValue(String key);
+	
+	public T getHash(String input);
 
 	public void setExpire(String key, long timeout, TimeUnit unit);
 	
 	public boolean deleteValue(String key);
+	
+	public long deleteAll();
 }

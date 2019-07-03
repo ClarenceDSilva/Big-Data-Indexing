@@ -10,4 +10,9 @@ public interface RedisService {
 	public void traverseInput(JsonNode inputData);
 	public void populateNestedData(JsonNode parent, Set<String> childIdSet);
 	public boolean deleteValue(String key);
+	public void updateJsonObject(JsonNode parent, Set<String> childIdSet);
+	public long deleteAllValues();
+	public void postValue(final String key, final String value);
+	public String getHash(String internalID);
+	
 }
