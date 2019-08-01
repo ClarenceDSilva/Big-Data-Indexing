@@ -1,0 +1,163 @@
+DELETE plan_index
+
+GET plan_index/_search?q=objectType:plan
+
+#Get all the data
+GET plan_index/_search
+{
+  "query":{
+    "match_all": {}
+  }
+}
+
+#Simple match query
+GET plan_index/_search
+{
+  "query":{
+    "nested": {
+        "path": "linkedPlanServices.linkedService",
+        "query": {
+          "match": {
+            "linkedPlanServices.linkedService.name": "monthly"
+          }
+          
+        }
+    }
+  }
+}
+
+#Join Query
+GET plan_index/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+            "nested" : {
+                "path" : "linkedPlanServices.linkedService",
+                "query" : {
+                    "bool" : {
+                        "must" : [
+                        { "match" : {"linkedPlanServices.linkedService.objectId" : "1234520xvc30sfs-505"}}
+                        ]
+                    }
+                }
+            }
+        },
+        {"match_phrase":{"objectId":"12xvxc345ssdsds-508"} }
+        
+      ]
+    }
+  }
+}
+
+#Wildcard query
+GET plan_index/_search
+{
+  "query":{
+    "nested": {
+        "path": "linkedPlanServices.linkedService",
+        "query": {
+          "wildcard": {
+           "linkedPlanServices.linkedService.name": "demo*"
+         }
+        }
+    }
+  }
+}
+
+#Multiple queries
+GET plan_index/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "nested": {
+            "path": "linkedPlanServices.planserviceCostShares",
+             "query":        
+             {
+               "range": {
+                "linkedPlanServices.planserviceCostShares.copay": {
+                "gte": 20
+            }
+          }}
+        }},
+        {
+          "nested": {
+            "path": "linkedPlanServices.planserviceCostShares",
+             "query":        
+             {
+               "range": {
+                "linkedPlanServices.planserviceCostShares.deductible": {
+                "gte": 10
+            }
+          }}
+        }}
+      ]
+  }}
+}
+
+#Negative Query
+GET plan_index/_search
+{
+  "query": {
+    "bool": {
+      "must_not": [
+        {
+          "nested": {
+            "path": "linkedPlanServices.planserviceCostShares",
+             "query":        
+             {
+               "range": {
+                "linkedPlanServices.planserviceCostShares.copay": {
+                "gte": 1000
+            }
+          }}
+        }},
+        {
+          "nested": {
+            "path": "linkedPlanServices.planserviceCostShares",
+             "query":        
+             {
+               "range": {
+                "linkedPlanServices.planserviceCostShares.deductible": {
+                "gte": 1000
+            }
+          }}
+        }}
+      ]
+  }}
+}
+
+# Aggregate Query
+GET plan_index/_search
+{
+  "query":{
+    "match": {
+      "name":{
+        "query":"linkedPlanServices.planserviceCostShares"
+      }
+    }
+    },
+    "size":0,
+    "aggs" : {
+        "avg_deductible" : { "avg" : { "field" : "linkedPlanServices.planserviceCostShares.deductible" } }
+    }
+}
+
+
+#Range Query
+GET plan_index/_search
+{
+  "query": {
+      "nested": {
+        "path": "linkedPlanServices.planserviceCostShares",
+         "query":        
+         {"range": {
+            "linkedPlanServices.planserviceCostShares.deductible": {
+            "gte": 1
+        }
+      }}
+    }}
+}
