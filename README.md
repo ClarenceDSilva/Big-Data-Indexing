@@ -31,6 +31,6 @@ Kibana was used for visualizing and for querying into the Elasticsearch.
 3. Start Elasticsearch and then Kibana
 4. Run the ProducerApp as a springboot app
 5. Run the ConsumerApp as a springboot app
-6. Before executing any request, create the Index in Elasticsearch (I have provided my index named as 'Elasticsearch_Indexer')
+6. Before executing any request, create the Index in Elasticsearch (I have provided my index as 'Elasticsearch_Indexer')
 7. Sample Elasticsearch queries are also provided. You can create your own queries or modify mine
 8. Enjoy!
