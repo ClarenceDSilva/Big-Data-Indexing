@@ -20,10 +20,10 @@ Kibana was used for visualizing and for querying into the Elasticsearch.
 -Postman is used for testing REST API's
 
 # Prerequisites
-1. Download ![Redis](https://redis.io/download) 
-2. Download and install ![Apache Kafka](https://kafka.apache.org/downloads)
-3. Download ![Apache Kafka](https://www.elastic.co/downloads/elasticsearch)
-4. Download ![Kibana](https://www.elastic.co/downloads/kibana)
+1. Download [Redis](https://redis.io/download) 
+2. Download and install [Apache Kafka](https://kafka.apache.org/downloads)
+3. Download [Apache Kafka](https://www.elastic.co/downloads/elasticsearch)
+4. Download [Kibana](https://www.elastic.co/downloads/kibana)
 
 # How to execute the project
 1. Start the Redis server
