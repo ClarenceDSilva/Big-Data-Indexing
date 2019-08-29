@@ -13,11 +13,11 @@ Created a consumer application to consume messages on the Kafka topic and index 
 Used Kibana to visualize the data and to query Elasticsearch
 
 #Tools and Technologies
--The Restful web services are developed using Springboot framework
--Redis is used as a data source
--Apache Kafka was used as a messaging queue
--Elasticsearch and Kibana were used for indexing and visualizing data
--[Postman](https://www.getpostman.com/) is used for testing REST API's
+- The Restful web services are developed using Springboot framework
+- Redis is used as a data source
+- Apache Kafka was used as a messaging queue
+- Elasticsearch and Kibana were used for indexing and visualizing data
+- [Postman](https://www.getpostman.com/) is used for testing REST API's
 
 # Prerequisites
 1. Download [Redis](https://redis.io/download) 
