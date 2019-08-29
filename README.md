@@ -6,18 +6,18 @@ Repository for the course Advanced Big-Data Application and Indexing Techniques
 
 
 # Project Summary:
-Developed REST calls and implemented CRUD operations for Indexing a JSON data file and stored it in Redis database
+Developed a REST application and implemented CRUD functionalities to store JSON data in Redis
 Secured the REST API using Google's OAuth 2.0 SSO authentication framework
-Used Apache Kafka as a queuing service for streaming messages asynchronously.
-Built a consumer application to consume the Kafka topic and to index the data into Elasticsearch service
-Kibana was used for visualizing and for querying into the Elasticsearch.
+Used Apache Kafka backed by Zookeeper as a queuing service to publish messages asynchronously
+Created a consumer application to consume messages on the Kafka topic and index the data to Elasticsearch. 
+Used Kibana to visualize the data and to query Elasticsearch
 
 #Tools and Technologies
 -The Restful web services are developed using Springboot framework
 -Redis is used as a data source
 -Apache Kafka was used as a messaging queue
 -Elasticsearch and Kibana were used for indexing and visualizing data
--Postman is used for testing REST API's
+-[Postman](https://www.getpostman.com/) is used for testing REST API's
 
 # Prerequisites
 1. Download [Redis](https://redis.io/download) 
