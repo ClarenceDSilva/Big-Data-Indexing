@@ -11,11 +11,11 @@ Through this project, we present The Big Data architecture for building distribu
 
 
 # Project Summary:
-Developed a REST application and implemented CRUD functionalities to store JSON data in Redis
-Secured the REST API using Google's OAuth 2.0 SSO authentication framework
-Used Apache Kafka backed by Zookeeper as a queuing service to publish messages asynchronously
-Created a consumer application to consume messages on the Kafka topic and index the data to Elasticsearch. 
-Used Kibana to visualize the data and to query Elasticsearch
+- Developed a REST application and implemented CRUD functionalities to store JSON data in Redis
+- Secured the REST API using Google's OAuth 2.0 SSO authentication framework
+- Used Apache Kafka backed by Zookeeper as a queuing service to publish messages asynchronously
+- Created a consumer application to consume messages on the Kafka topic and index the data to Elasticsearch. 
+- Used Kibana to visualize the data and to query Elasticsearch
 
 #Tools and Technologies
 - The Restful web services are developed using Springboot framework
